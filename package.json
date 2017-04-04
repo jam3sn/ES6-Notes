@@ -1,0 +1,10 @@
+{
+  "name": "learn-es6",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "devDependencies": {
+    "rollup-plugin-buble": "^0.15.0"
+  }
+}
