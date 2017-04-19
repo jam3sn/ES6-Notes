@@ -139,8 +139,6 @@ In order to use modules we MUST use a module bundler, otherise import errors out
  - Rollup
  - Webpack
  - Gulp
-
-
 */
 
 
@@ -170,3 +168,65 @@ import { MyClass, foo } from './MyClass';]
 
 new MyClass('cake').dump(); //Would console log 'cake'
 console.log(foo); //Would console log 'bar'
+
+
+
+/*
+Promises
+----------------------------
+Placeholder for a future action.
+*/
+var myAjaxFunc = new Promise(function(resolve, reject) {
+        //All good, return
+        resolve();
+
+        //error
+        reject();
+});
+
+var promise = this.myAjaxFunc('/path/to/somewhere');
+
+//Note to run the promise, you need to run .then()
+promise.then(function(data) {
+    //Do something when myAjaxFunc returns
+}, function(err) {
+    //Catch error
+});
+
+
+
+/*
+String additons
+----------------------------
+*/
+//.includes is a goo alt for .indexOf
+if (mySting.includes('Hello')){
+    console.log('It includes Hello')
+}
+/*
+Can also use:
+.startsWith()
+.endsWith()
+.repeat(x)
+*/
+['foo', 'bar'].includes('bar');
+
+
+
+/*
+Arrays
+----------------------------
+*/
+
+[2,4,6,8,10].find(function(item) {
+    return item === 8; //Returns true
+    return item > 5; //Returns 6 because it's the next val
+});
+
+/*
+[].findIndex() returns the index key for the array item
+[].fill()
+[].keys()
+[].values()
+[].entries() //Returns key, val
+*/
