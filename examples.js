@@ -217,7 +217,6 @@ Can also use:
 Arrays
 ----------------------------
 */
-
 [2,4,6,8,10].find(function(item) {
     return item === 8; //Returns true
     return item > 5; //Returns 6 because it's the next val
@@ -230,3 +229,39 @@ Arrays
 [].values()
 [].entries() //Returns key, val
 */
+
+
+
+/*
+Generators
+----------------------------
+Pauses between yields. So when you call .next() on it, it'll do 1, pause, call again will get 2 etc.
+*/
+function *numbers(){
+    yield 1;
+
+    yield 2;
+
+    yield 3;
+}
+
+let iterator = numbers();
+
+console.log(iterator.next()) //1
+console.log(iterator.next()) //2
+console.log(iterator.next()) //3
+
+for (let i of iterator) console.log(i) //This would log 1,2,3
+
+console.log(
+        [...numbers()]
+); //This would log an array with 1,2,3
+
+
+/*
+Sets
+----------------------------
+*/
+var people = ['James', 'Jane', 'James'];
+
+console.log(new Set(people)); //Would removw the duplicate James. Only returning an object with 2 unique values
